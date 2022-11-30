@@ -2,7 +2,7 @@ const BasePage = require('./base.page')
 
 class HomePage extends BasePage {
 	changeCurrencyToUSD = async () => {
-		await this.findXpath('//div[@class="header-second-mobile-filter"]/div[@class="select currency-switcher hoverable"]').click()
+		await this.findCss('.header-second-mobile-filter .select.currency-switcher.hoverable').click()
 		await this.findXpath('//li[@class="select-list-value" and text()="USD"]').click()
 	}
 
@@ -24,7 +24,7 @@ class HomePage extends BasePage {
 	}
 
 	getProductsCostFromCart = async () => {
-		return await this.findCss('.header-cart-total-cost').getText()
+		return await this.findCss('.header-cart-total-cost').getAttribute('innerHTML')
 	}
 
 	getProductCost = async () => {

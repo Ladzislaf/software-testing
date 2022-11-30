@@ -22,7 +22,9 @@ describe('UI tests for jolybell.com | lab10', () => {
 		await homePage.findXpath('//button[@class="product-info-add-to-cart"]').click()
 		await homePage.findXpath('//button[@class="modal__cart-continue-shopping"]').click()
 		let productsCost = await homePage.getProductsCostFromCart()
-		
+		// remove &nbsp;
+		productsCost = productsCost.replace(/&nbsp;/g, ' ')
+
 		// cost can change
 		await assert.equal(productsCost, '38.76 USD')
 	})
