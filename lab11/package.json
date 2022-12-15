@@ -1,0 +1,16 @@
+{
+  "name": "lab10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/**/*.test.js --no-timeouts "
+  },
+  "author": "ladzislaf",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^107.0.3",
+    "mocha": "^10.1.0",
+    "selenium-webdriver": "^4.6.1"
+  }
+}
